@@ -50,6 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
       var decoded=jsonDecode(response.body);
       SharedPreferences sharedPreferences=await SharedPreferences.getInstance();
       sharedPreferences.setString("token", decoded['token']);
+      sharedPreferences.setString("userId", decoded['userId']);
       Navigator.pushNamedAndRemoveUntil(
           context, '/home', ModalRoute.withName('/home'));
 
